@@ -1,0 +1,155 @@
+.about {
+    background-color: #faf6eb;
+    overflow-x: hidden;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    background-image: radial-gradient(closest-side at 15vw 75%, #ffffff 0%, #ffffff 10%,#faf6eb 45vw);
+    background-position: 50% 150%;
+}
+
+.headshot {
+    background-image: url('/assets/img/yijun-cutout2.png');
+    background-size: contain;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    min-width: 300px;
+}
+
+.hero .intro {
+    padding: 0;
+}
+.hero .intro > * {
+    padding: 3rem 2rem 0 2rem;
+    box-sizing: content-box;
+}
+
+.hero .intro p {
+    max-width: 22rem;
+    font-size: 1.25em;
+}
+
+#mask {
+    transform: scale(0.01);
+}
+
+@media screen and (max-width: 800px) {
+    .hero {
+        flex-direction: column-reverse;
+    }
+    .hero .intro > h1 {
+        margin: 2rem 0 0 0;
+        padding: 0 0;
+        text-align: center;
+
+    }
+    .intro img {
+        max-width: 66vw;
+    }
+    .headshot {
+        outline: 200xp solid red;
+        min-height: 30vh;
+    }
+}
+
+[class*="logos"] img {
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.companies {
+    box-shadow: 0px -8px 8px rgba(0,0,0,0.03);
+    background-color: transparent;
+    background-image: url('/assets/img/ex.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.companies__description {
+    grid-column: 2;
+}
+
+.companies__description > * {
+    max-width: 22rem;
+}
+
+.companies__logos {
+    grid-column: 3;
+    flex-direction: row;
+}
+
+.companies__logos > img,
+.companies__logos a img {
+    width: 150px;
+    display: inline-block;
+    vertical-align: 50%;
+    padding: 0.5rem 1rem;
+}
+
+.companies__logos > *:hover {
+    transform: scale(1.05);
+    transition: 1s all ease;
+}
+
+@media screen and (max-width: 800px) {
+    .companies {
+        grid-template-columns: 0 22% auto;
+        grid-template-rows: auto 1fr;
+        padding-bottom: 3rem;
+    }
+    .companies__description {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .companies__logos {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+
+.areas .areas__logos * {
+    width: 150px;
+    display: inline-block;
+    vertical-align: 50%;
+    padding: 0.5rem 1rem;
+}
+
+.areas .areas__logos {
+    grid-column: 3;
+}
+
+.areas .areas__description {
+    grid-column: 2;
+}
+
+.sayhello .sayhello__form{
+    grid-column: 2/4;
+}
+
+.about section:not(.hero) {
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: 22% 1fr 1fr;
+    grid-template-rows: auto;
+    overflow: hidden;
+    padding-top: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .about section:not(.hero) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        padding-bottom: 3rem;
+    }
+    .about section:not(.hero) [class*="description"]  {
+        grid-column: 2;
+        grid-row: 1;
+        // background: green;
+    }
+    .about section:not(.hero) [class*="logos"] {
+        grid-column: 2;
+        grid-row: 2;
+        // background: blue;
+    }
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'alexshi';
+  public isNavToggleOpen = false;
+  private currentYear = 2019;
+
+  constructor(private renderer: Renderer) {
+    this.currentYear = new Date(Date.now()).getFullYear();
+  }
+
+  toggleNav(event: any) {
+    this.isNavToggleOpen = ! this.isNavToggleOpen;
+  }
+
 }

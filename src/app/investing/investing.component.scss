@@ -1,0 +1,31 @@
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(21px, 33px, 400)
+);
+@include mat-base-typography($custom-typography);
+@include angular-material-typography($custom-typography);
+
+article {
+    margin-bottom: 8rem;
+}
+
+.featuredmedia {
+    width: 100vw;
+}
+
+.date {
+    display: block;
+    text-align: center;
+}
+
+.blogtitle {
+margin: 1rem auto !important;
+max-width: 46rem !important;
+}
+
+.content {
+    max-width: 46rem;
+    margin: 0 auto;
+}

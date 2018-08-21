@@ -1,0 +1,7 @@
+<article *ngFor="let article of articles" class="mat-typography">
+  <img class="featuredmedia" [src]="article._embedded['wp:featuredmedia'][0].source_url " alt="" />
+  <h1 class="mat-headline blogtitle">{{article.title.rendered}}</h1>
+
+  <span class="date mat-caption">{{article.date | date}}</span>
+  <div class="content mat-typography" [innerHTML]="article.content.rendered"></div>
+</article>

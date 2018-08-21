@@ -1,0 +1,233 @@
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    height: 86px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.875);
+    display: flex;
+    z-index: 100;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+}
+
+header.open {
+    background-color: rgba(255,255,255,1);
+}
+
+header:not(.open) nav {
+    display: none;
+} 
+
+header.open nav {
+    position: fixed;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 86px;
+    width: 100vw;
+    min-height: calc(100vh - 86px);
+    background-color: rgba(255,255,255,1);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+header.open nav * {
+    animation-duration: 0.53s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+header.open nav *:nth-child(2n-1) {
+    animation-name: crossFadeInFromLeft;
+}
+
+header.open nav *:nth-child(2n) {
+    animation-name: crossFadeInFromRight;
+}
+
+@keyframes crossFadeInFromLeft{
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes crossFadeInFromRight{
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+header nav a {
+    position: relative;
+    color: unset;
+    text-decoration: unset;
+    padding: 1rem;
+    font-size: large;
+    transform: scaleX(1);
+}
+
+header nav a::before {
+    display: block;
+    position: absolute;
+    content: '';
+    left: 25%;
+    width: 50%;
+    bottom: 0.5rem;
+    background-color: rgba(243, 197, 86, 0.875);
+    height: 2px;
+    transition: 0.25s all ease;
+}
+
+header nav a:hover {
+    transform: scaleX(105%);
+}
+
+header nav a:hover::before {
+    height: 0.5rem;
+    left: 0;
+    width: 100%;
+}
+
+.header__spacer {
+    flex-grow:2;
+}
+
+#title {
+    margin-left: 66px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    background-color: black;
+    color: white;
+    min-height: auto;
+    padding: 3rem 1rem;
+    font-size: smaller;
+}
+
+footer section {
+    margin: 0 1rem 1.5rem 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: unset;
+}
+
+#nav__toggle {
+    position: relative;
+    font-size: x-small;
+    text-transform: uppercase;
+    border-color: #dddddd;
+    padding: 2px 0px;
+    overflow: hidden;
+    width: 55px !important;
+    min-width: 55px !important;
+    max-width: 55px !important;
+    height: 55px !important;
+    min-height: 55px !important;
+    max-height: 55px !important;
+    vertical-align: bottom;
+}
+#nav__toggle:hover * {
+    max-width: 100% !important;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+}
+
+#nav__toggle span.lbl {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1em;
+}
+
+#nav__toggle .bar {
+    position: absolute;
+    left: 50%;
+    width: 66%;
+    height: 4px;
+    margin: 3px auto 0 auto; 
+    background: black;
+    transform: translateX(-50%) rotateZ(0deg) ;
+    animation-fill-mode: forwards;
+}
+#nav__toggle .bar:nth-child(1) {top: 0%;}
+#nav__toggle .bar:nth-child(2) {top: 25%;}
+#nav__toggle .bar:nth-child(3) {top: 50%;}
+
+.open .bar:nth-child(1) {animation-name: bar1open;}
+
+header:not(.open) .bar:nth-child(1) {animation-name: bar1close;}
+
+@keyframes bar1close {
+    from {transform: translateX(-50%) rotateZ(-225deg); top: 25%;}
+    to {transform: translateX(-50%) rotateZ(0deg); top:0;}
+}
+
+@keyframes bar1open {
+    from {transform: translateX(-50%) rotateZ(0deg); top:0;}
+    to {transform: translateX(-50%) rotateZ(-225deg); top: 25%;}
+}
+
+.open .bar:nth-child(2) {animation-name: bar2open;}
+
+header:not(.open) .bar:nth-child(2) {animation-name: bar2close;}
+
+@keyframes bar2close {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@keyframes bar2open {
+    from {opacity:1;}
+    to {opacity:0;}
+}
+
+.open .bar:nth-child(3) {animation-name: bar3open;}
+
+header:not(.open) .bar:nth-child(3) {animation-name: bar3close;}
+
+@keyframes bar3close {
+    from {transform: translateX(-50%) rotateZ(45deg); top: 25%;}
+    to {transform: translateX(-50%) rotateZ(0deg); top: 50%;}
+}
+
+@keyframes bar3open {
+    from {transform: translateX(-50%) rotateZ(0deg); top:50%;}
+    to {transform: translateX(-50%) rotateZ(45deg); top: 25%;}
+}
+

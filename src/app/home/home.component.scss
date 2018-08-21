@@ -1,0 +1,275 @@
+.hero {
+    min-height: 557px;
+    background-size: cover;
+    // background-origin: 50% 50%;
+    // background-image: url('/assets/img/surrey.jpg');
+    // background-image: url('/assets/img/bill_jing_house@1280x720.jpg');
+    padding: 9rem 3rem;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.hero::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url('/assets/img/bill_jing_house@1280x720.jpg');
+    background-size: cover;
+    background-position: 50% 0%;
+    opacity: 0.5;
+}
+
+.hero .cta {
+    position: sticky;
+    display: block;
+    margin: 0 auto;
+    transform: scale(1.25);
+    // position: absolute;
+    margin-top: 1rem;
+    top: 325px;
+    z-index: 4;
+    box-sizing: border-box;
+    // top: calc(86px + 32px);
+
+}
+
+.hero .quote {
+    // max-width: 50%;
+    top: 1rem;
+    left: 1rem;
+    z-index: 3;
+    position: absolute;
+}
+
+.hero .cutout {
+    background: url("/assets/img/yijun-cutout2.png");
+    width: 300px;
+    height: 398px;
+    position: absolute;
+    right: 7%;
+    bottom: 0%;
+    z-index: 2;
+}
+
+.showings,
+.listings,
+.investing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.showings h2,
+.listings h2,
+.investing h2
+ {
+    width: 100vw;
+    padding: 1rem 2rem 1rem 20vw;
+}
+
+.soldout {
+    display: inline-block;
+    padding: 0.66rem;
+    border-style: double;
+    border-color: rgba(255, 0, 0, 0.125);
+    border-width: 8pt;
+    background: rgba(255, 0, 0, 0.125);;
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transform: rotateZ(-15deg);
+}
+
+.viewbox {
+    position: relative;
+    max-width: 350px;
+    max-height: 350px;
+    min-width: 320px;
+    min-height: 320px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+    text-transform: uppercase;
+    font-weight: 700;
+    box-sizing: content-box;
+    margin: 0.5rem;
+    overflow: hidden;
+}
+
+.viewbox .image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: inline-block;
+    // height: auto;
+    width: auto;
+    // margin: -14.25% 0;
+    transform: scale(1.1425);
+    margin-bottom: -7.125%;
+    animation: imgzoomfadein 1.3s ease;
+}
+
+@keyframes imgzoomfadein {
+    from{
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1.1425);
+    }
+}
+
+.viewbox img {
+    min-height: calc(100% - 3rem);
+    width: auto;
+}
+
+.viewbox .price {
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    // right: 4rem;
+    right: 0;
+    height: 4rem;
+    background-color: rgba(0,0,0,0.33);
+    line-height: 4rem;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+}
+
+.viewbox .like {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 4rem;
+    width: 4rem;
+    background-color: goldenrod;
+    line-height: 4rem;
+    font-size: xx-large;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.viewbox .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    text-align: center;
+    max-width: calc(100% - 0rem);
+    width:100%;
+}
+
+.viewbox .address {
+    line-height: 1.5rem;
+    background-color: black;
+    color: white;
+    padding: 0 0.5rem;
+}
+
+.viewbox .datum {
+    line-height: 1.5rem;
+    background-color: goldenrod;
+    padding: 0 0.5rem;
+}
+
+.viewbox .datum > * {
+    padding-right:1.5rem;
+    padding-left: 1.25rem;
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    background-position-y: 50%;
+}
+
+
+.viewbox .datum .beds {
+    background-image: url('/assets/img/bed2-black.svg');
+}
+
+.viewbox .datum .baths {
+    background-image: url('/assets/img/bath-black.svg');
+}
+
+.viewbox .datum .area {
+    background-image: url('/assets/img/blueprint-black.svg');
+}
+.viewbox .datum .area:after {
+    position: relative;
+    content: '\'²';
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.viewbox .banner {
+    position: absolute;
+    left: -6rem;
+    top: 3rem;
+    width: 200px;
+    padding: 0 90px;
+    line-height: 3rem;
+    transform:  rotateZ(315deg);
+    text-align: center;
+    background-color: goldenrod;
+    box-sizing: content-box;
+}
+
+.viewbox .openhouse {
+    position: absolute;
+    left: -9rem;
+    top: 2rem;
+    width: 200px;
+    padding: 0 90px 0 100px;
+    line-height: 3rem;
+    transform:  rotateZ(315deg);
+    text-align: center;
+    box-sizing: content-box;
+    background-color: rgb(218, 32, 32);
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.openhouse.viewbox::after {
+    content: 'OPEN HOUSE 2-4';
+    display: block;
+    position: absolute;
+    left: -9rem;
+    top: 2rem;
+    width: 200px;
+    padding: 0 90px 0 100px;
+    line-height: 3rem;
+    transform:  rotateZ(315deg);
+    text-align: center;
+    box-sizing: content-box;
+    background-color: rgb(218, 32, 32);
+    z-index: 0;
+}
+
+.investing {
+    min-height: 300px;
+}
+
+.investing__article {
+    max-width: 400px;
+    margin: 1rem;
+}
+
+.investing__article__image {
+    background-size: cover;
+    background-image: url('/assets/img/yijun-cutout2.png');
+}
+
+.investing__article .mat-card-image {
+    margin: 0 0 0 0;
+}

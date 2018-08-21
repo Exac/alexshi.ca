@@ -1,0 +1,18 @@
+<p class="mat-typography mat-display-2">Call me at <a href="tel:778-846-2539">778-846-2539</a> or send me an email.</p>
+<form [formGroup]="form">
+  <mat-form-field class="myemail">
+    <input type="email" #email name="from" matInput placeholder="your@email.com" (input)="from = $event.target.value" required="true" formControlName="email"
+    />
+    <mat-icon matSuffix>alternate_email</mat-icon>
+  </mat-form-field>
+  <mat-form-field class="emailbody">
+    <textarea matInput #email name="email" value="" placeholder="Leave me a message" (input)="body = $event.target.value" required="true" formControlName="body"></textarea>
+    <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+  <a [href]="mailto">
+    <button mat-raised-button type="button" (click)="sendEmail($event);" [disabled]="form.invalid">
+      <mat-icon>send</mat-icon>
+      <span>Send Email</span>
+    </button>
+  </a>
+</form>

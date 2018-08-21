@@ -1,0 +1,76 @@
+<section class="hero mat-typography">
+  <a href="tel:778-846-2539">
+    <button mat-raised-button class="cta">
+      <mat-icon>phone</mat-icon>
+      <span>Call Alex for a free consultation</span>
+    </button>
+  </a>
+  <p class="quote mat-display-2">Home ownership is within your reach.</p>
+  <div class="cutout"></div>
+</section>
+
+<section class="showings">
+  <a name="showings"></a>
+  <h2>Showings</h2>
+  <div class="soldout"><span>Sold Out</span></div>
+
+  <!-- <div class="viewbox openhouse" *ngFor="let post of showings">
+    <div class="image">
+      <img [src]="post._embedded['wp:featuredmedia'][0].source_url">
+    </div>
+    <span class="price">$988,000</span>
+    <div class="banner">
+      <span>Port Moody</span>
+    </div>
+    <div class="info">
+        <span class="address">2606 660 NOOTKA WAY</span>
+      <span class="datum">
+        <span class="beds">2</span>
+        <span class="baths">2</span>
+        <span class="area">1150</span>
+      </span>
+    </div>
+  </div> -->
+
+</section>
+
+<!-- <section class="listings">
+  <h2>Listings</h2>
+  <div class="viewbox openhouse" *ngFor="let post of listings">
+    <div class="image">
+      <img [src]="post._embedded['wp:featuredmedia'][0].source_url">
+    </div>
+    <span class="price">$988,000</span>
+    <div class="banner">
+      <span>Port Moody</span>
+    </div>
+    <div class="info">
+        <span class="address">2606 660 NOOTKA WAY</span>
+      <span class="datum">
+        <span class="beds">2</span>
+        <span class="baths">2</span>
+        <span class="area">1150</span>
+      </span>
+    </div>
+  </div>
+</section> -->
+
+<section class="investing">
+  <h2>Investing</h2>
+
+  <mat-card class="investing__article" *ngFor="let post of investing">
+    <mat-card-header>
+      <div mat-card-avatar class="investing__article__image"></div>
+      <mat-card-title>{{ post.title.rendered }}</mat-card-title>
+      <mat-card-subtitle>{{ post.date | date }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="post._embedded['wp:featuredmedia'][0].source_url" alt="">
+    <mat-card-content [innerHTML]="post.content.rendered | truncate"></mat-card-content>
+    <mat-card-actions>
+      <a [routerLink]="investingURI + post.slug"><button mat-button>READ</button></a>
+      <!-- <button mat-button>SHARE</button> -->
+    </mat-card-actions>
+  </mat-card>
+
+
+</section>

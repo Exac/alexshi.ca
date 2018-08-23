@@ -42,5 +42,5 @@ Thumbs.db
 /backend/alexshica.pem
 /backend/alexshica.ppk
 
-# Wordpress Config
-/wordpress/wp-config.php
+# PHP MySQL information
+/wordpress/.htaccess

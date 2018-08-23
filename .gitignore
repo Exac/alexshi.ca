@@ -1,15 +1,15 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
-/out-tsc
+/frontend/dist
+/frontend/tmp
+/frontend/out-tsc
 
 # dependencies
-/node_modules
+/frontend/node_modules
 
 # IDEs and editors
-/.idea
+/frontend/.idea
 .project
 .classpath
 .c9/
@@ -39,5 +39,5 @@ testem.log
 Thumbs.db
 
 # AWS SSH Key
-alexshica.pem
-alexshica.ppk
+/backend/alexshica.pem
+/backend/alexshica.ppk

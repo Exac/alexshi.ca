@@ -6,7 +6,9 @@
 /frontend/out-tsc
 
 # dependencies
-/frontend/node_modules
+frontend/node_modules
+backend/node_modules
+node_modules
 
 # IDEs and editors
 /frontend/.idea

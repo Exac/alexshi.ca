@@ -1,0 +1,33 @@
+{
+  "name": "alexshicabackend",
+  "version": "1.0.0",
+  "description": "Backend for alexshi.ca. Provides an API to display MLS listings.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "keywords": [
+    "MSL",
+    "Realtor",
+    "API",
+    "Node"
+  ],
+  "author": "Thomas McLennan <contact@thomasmclennan.ca>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cheerio": "^0.22.9",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^4.0.3",
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.9.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1"
+  }
+}

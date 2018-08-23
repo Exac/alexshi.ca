@@ -1,5 +1,5 @@
 .hero {
-    min-height: 557px;
+    min-height: 425px;
     background-size: cover;
     // background-origin: 50% 50%;
     // background-image: url('/assets/img/surrey.jpg');
@@ -28,12 +28,14 @@
     margin: 0 auto;
     transform: scale(1.25);
     // position: absolute;
-    margin-top: 1rem;
-    top: 325px;
+    margin-top: 3rem;
+    top: 300px;
     z-index: 4;
     box-sizing: border-box;
     // top: calc(86px + 32px);
-
+    @media screen and (max-width: 369px) {
+        margin-top: 4.5rem;
+    }
 }
 
 .hero .quote {
@@ -45,13 +47,19 @@
 }
 
 .hero .cutout {
-    background: url("/assets/img/yijun-cutout2.png");
-    width: 300px;
-    height: 398px;
+    background-image: url("/assets/img/yijun-cutout2.png");
+    background-size: cover;
+    background-position: 50% 0;
+    width: 100vw;
+    max-width: 500px;
+    margin: 0 auto;
+    height:66%;
     position: absolute;
-    right: 7%;
+    left: 0;
+    right: 0;
     bottom: 0%;
     z-index: 2;
+    background-repeat: no-repeat;
 }
 
 .showings,

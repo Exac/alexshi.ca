@@ -1,0 +1,12 @@
+[12-Aug-2018 16:40:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/xifp03enk02z/public_html/wp.alexshi.ca/index.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/xifp03enk02z/public_html/wp.alexshi.ca/index.php on line 20
+[12-Aug-2018 16:40:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/xifp03enk02z/public_html/wp.alexshi.ca/index.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/xifp03enk02z/public_html/wp.alexshi.ca/index.php on line 20
+[12-Aug-2018 16:42:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/xifp03enk02z/public_html/wp.alexshi.ca/index.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/xifp03enk02z/public_html/wp.alexshi.ca/index.php on line 20

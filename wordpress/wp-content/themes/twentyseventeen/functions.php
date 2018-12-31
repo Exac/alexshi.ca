@@ -584,3 +584,27 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+/**
+ * Have JSON API provide custom fields
+ */
+function get_custom_value( $object, $field_name, $request ) {
+	return get_post_meta($object["id"])[$field_name];
+}
+function add_custom_fields() {
+	$arr = array("baths", "beds", "size", "price", "showing");
+	foreach($arr as &$value) {
+		register_rest_field(
+		'post', 
+		$value, // New Field Name in JSON RESPONSEs
+		array(
+			'get_callback'    => 'get_custom_value', // Custom function name 
+			'update_callback' => null,
+			'schema'          => null,
+			)
+		);
+	}
+}
+add_action( 'rest_api_init', 'add_custom_fields' );
+
+

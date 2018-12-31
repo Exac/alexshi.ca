@@ -12,7 +12,8 @@ export class HomeComponent implements OnInit {
   investing: Post[] = []; // how-tos
   investingURI = '/investing/';
   listings: Post[] = []; // how-tos
-  listingsURI = '/listings/';
+  viewings: Post[] = []; // how-tos
+
 
   constructor(private wp: WordpressService) { }
 

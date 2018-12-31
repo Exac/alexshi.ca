@@ -2,13 +2,14 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cheerio from 'cheerio';
 import * as rp from 'request-promise';
+import * as puppeteer from 'puppeteer';
 
 /**
  * SETTINGS
  */
-let options: any = {};
 const app: express.Application = express();
-
+const url = 'http://thomasmclennan.ca';
+// const url = 'https://www.realtor.ca/Residential/Single-Family/19697431/2606-660-NOOTKA-WAY-Port-Moody-British-Columbia-V3H0B7';
 /**
  * Models
  */
@@ -33,12 +34,12 @@ async function parse() {
     };
     return rp(options)
         .then(($) => {
-            console.log( '$' + $ );
+            console.log('$' + $);
             return $;
         })
         .catch((err) => {
-            console.log('err' );
-            return err;
+            console.log('err');
+            return err.error;
         });
 }
 
@@ -56,14 +57,24 @@ app.get('/', (req, res) => {
     return res.json({ 'wew': 'lad' });
 });
 app.get('/nootka', async function (req, res) {
-    await parse()
-        .then(($) => {
-            res.send('success' + $)
-        })
-        .catch((err) => {
-            res.send(err.message)
-        });
+    const browser = await puppeteer.launch({ headless: false, slowMo: 250 });
+    const page = await browser.newPage();
+    page.setJavaScriptEnabled(true);
+    await page.setViewport({ width: 1280, height: 720 });
+    await page.setUserAgent('Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0');
+    page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+    await page.goto(url);
 
+    const dimensions = await page.evaluate(() => {
+        return {
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight,
+            deviceScaleFactor: window.devicePixelRatio,
+        };
+    });
+
+    return res.send('done');
+    await browser.close();
 })
 
 /**

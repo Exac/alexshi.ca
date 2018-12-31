@@ -118,6 +118,10 @@ header nav a:hover::before {
     flex-grow:2;
 }
 
+header #title {
+  max-height: 100%;
+}
+
 #title {
     margin-left: 66px;
 }

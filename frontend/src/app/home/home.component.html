@@ -1,36 +1,38 @@
 <section class="hero mat-typography">
-  <a href="tel:778-846-2539">
+  <a href="tel:778-846-2539" class="ctalink">
     <button mat-raised-button class="cta">
       <mat-icon>phone</mat-icon>
       <span>Call Alex for a free consultation</span>
     </button>
   </a>
-  <p class="quote mat-display-2">Home ownership is within your reach.</p>
-  <div class="cutout"></div>
+  <!--<p class="quote mat-display-2">Home ownership is within your reach.</p>-->
+  <!--<div class="cutout"></div>-->
 </section>
 
 <section class="showings">
   <a name="showings"></a>
   <h2>Showings</h2>
-  <div class="soldout"><span>Sold Out</span></div>
+  <div class="soldout" *ngIf="listings.length===0"><span>Coming soon</span></div>
 
-  <!-- <div class="viewbox openhouse" *ngFor="let post of showings">
+  <div class="viewbox openhouse" *ngFor="let post of listings">
+    <div class="time"*ngIf="post['showing']">{{ post['showing'][0] }}</div>
     <div class="image">
       <img [src]="post._embedded['wp:featuredmedia'][0].source_url">
     </div>
-    <span class="price">$988,000</span>
+    <span class="price" *ngIf="post['price']">${{ post['price'][0] | number}}</span>
     <div class="banner">
-      <span>Port Moody</span>
+      <span *ngIf="post['city']">{{ post['city'][0] }}</span>
+      <span *ngIf="!post['city']"></span>
     </div>
     <div class="info">
-        <span class="address">2606 660 NOOTKA WAY</span>
+      <span class="address" *ngIf="post['title'].rendered">{{post['title'].rendered}}</span>
       <span class="datum">
-        <span class="beds">2</span>
-        <span class="baths">2</span>
-        <span class="area">1150</span>
+        <span class="beds" *ngIf="post['beds']">{{ post['beds'][0] }}</span>
+        <span class="baths" *ngIf="post['baths']">{{ post['baths'][0] }}</span>
+        <span class="size" *ngIf="post['size']">{{ post['size'][0] | number }}</span>
       </span>
     </div>
-  </div> -->
+  </div>
 
 </section>
 
